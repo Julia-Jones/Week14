@@ -1,0 +1,35 @@
+<?xml Julia Jones - May 22 2018 - Week 14 Assignment?>
+-->
+
+try {
+//allows the program to write and read the files
+        OutputStream fout= new FileOutputStream("information.xml");
+        OutputStream bout= new BufferedOutputStream(fout);
+        //defines it to be XML with the ISO 8859_1 coding style
+        OutputStreamWriter out = new OutputStreamWriter(bout, "8859_1");
+
+//the <//course//> opens and closes the root elements of the file ( contains all the information)
+	out.write("<course>\r\n");
+            //contains all the specific information in the child elements
+            //out puts them to the information scree 
+        out.write("<course>ICS4C</course>\r\n\");
+	out.write("<description> Computer Programming, Grade 12, University</description>\r\n");
+	out.write("<teacher> Ms. Harris </teacher>\r\n");
+	out.write("<schoolBoard>WRDSB</schoolBoard>\r\n");
+        out.write("<course>\r\n");
+            
+            //outputs and closes it when everything has been output to the information screen
+        out.flush();  
+        out.close();
+      }
+            //deals with errors
+      catch (UnsupportedEncodingException e) {
+        System.out.println(
+         "This VM does not support the Latin-1 character set."
+        );
+      }
+      catch (IOException e) {
+        System.out.println(e.getMessage());
+      }
+    }
+}
